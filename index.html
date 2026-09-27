@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ORHAN · Haute Parfumerie | Minimalist Luxury Fragrance Atelier</title>
+  <meta name="description" content="Orhan Haute Parfumerie. Handcrafted minimalist luxury fragrances composed with rare botanicals, precious woods, and enduring sillage.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="announcement-bar" aria-label="Announcement">
+    <div class="container">
+      <span>✦ Complimentary Worldwide Shipping on Bespoke Orders · Sustainable Crystal Flacons ✦</span>
+    </div>
+  </aside>
+
+  <!-- Sticky Site Navigation -->
+  <header class="site-header">
+    <div class="container navbar">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="Orhan Perfume Store Home">
+        <span class="logo-main">ORHAN</span>
+        <span class="logo-sub">Haute Parfumerie</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#catalog" class="active">Collection</a></li>
+          <li><a href="#philosophy">Craftsmanship</a></li>
+          <li><a href="#story">Atelier Story</a></li>
+          <li><a href="#newsletter">VIP Club</a></li>
+        </ul>
+      </nav>
+
+      <!-- Navigation Actions -->
+      <div class="nav-actions">
+        <!-- Admin Management Link -->
+        <a href="admin.html" class="admin-link-btn" title="Manage Fragrances in Supabase">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+          </svg>
+          <span>Admin Portal</span>
+        </a>
+
+        <!-- Shopping Cart Trigger -->
+        <button id="cart-btn" class="nav-btn" aria-label="Shopping Bag" title="View Shopping Bag">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span id="cart-badge" class="cart-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="hero-tag">The Art of Fine Perfumery</span>
+        <h1 class="hero-title">The Alchemy of <em>Rare Scents</em></h1>
+        <p class="hero-subtitle">
+          Intimately formulated in limited maceration batches. Each flacon captures the quiet opulence of hand-harvested botanicals, noble resins, and luminous indigo amber.
+        </p>
+        <div class="hero-actions">
+          <a href="#catalog" class="btn-primary">
+            <span>Explore Collection</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="admin.html" class="btn-secondary">
+            <span>Add Fragrances</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Visual Flacon Mockup -->
+      <div class="hero-flacon-preview">
+        <div class="hero-flacon-card">
+          <img src="assets/icons/flacon.svg" alt="Orhan Flacon Archetype" class="hero-flacon-img">
+          <div class="hero-flacon-caption">
+            <h3>Atelier Orhan Flacon</h3>
+            <p>100ml Pure Extrait de Parfum</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Philosophy / Pillars -->
+  <section id="philosophy" class="pillars-section">
+    <div class="container pillars-grid">
+      <div class="pillar-item">
+        <div class="pillar-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <div class="pillar-text">
+          <h4>Noble Raw Essences</h4>
+          <p>Sustainably harvested Grasse jasmines, aged agarwood, and rare Florentine orris.</p>
+        </div>
+      </div>
+
+      <div class="pillar-item">
+        <div class="pillar-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <div class="pillar-text">
+          <h4>Long Maceration</h4>
+          <p>Slowly matured for 180 days to attain incomparable depth, harmony, and longevity.</p>
+        </div>
+      </div>
+
+      <div class="pillar-item">
+        <div class="pillar-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+        <div class="pillar-text">
+          <h4>Extrait Concentration</h4>
+          <p>Compounded at exceptional 30%+ oil concentrations for unmatched 18-hour sillage.</p>
+        </div>
+      </div>
+
+      <div class="pillar-item">
+        <div class="pillar-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+          </svg>
+        </div>
+        <div class="pillar-text">
+          <h4>Hand-Polished Glass</h4>
+          <p>Heavy indigo tinted crystal flacons finished with brushed gold magnetic caps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Supabase Catalog Section -->
+  <main id="catalog" class="catalog-section">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-tag">Haute Parfumerie</span>
+        <h2 class="section-title">The Curated Fragrance Catalog</h2>
+        <p class="section-desc">
+          Live collection retrieved directly from your Supabase database. Browse bespoke formulations or use the Admin Portal to curate your selection.
+        </p>
+      </header>
+
+      <!-- Catalog Controls: Filter, Search, Sort -->
+      <div class="catalog-toolbar">
+        <div class="category-filters" id="category-filters" role="group" aria-label="Fragrance categories">
+          <button class="filter-btn active" data-category="all">All Fragrances</button>
+          <button class="filter-btn" data-category="Eau de Parfum">Eau de Parfum</button>
+          <button class="filter-btn" data-category="Extrait de Parfum">Extrait de Parfum</button>
+          <button class="filter-btn" data-category="Oud & Oriental">Oud & Oriental</button>
+          <button class="filter-btn" data-category="Floral & Citrus">Floral & Citrus</button>
+          <button class="filter-btn" data-category="Woody & Amber">Woody & Amber</button>
+        </div>
+
+        <div class="toolbar-controls">
+          <div class="search-box">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+            </svg>
+            <input type="text" id="catalog-search" placeholder="Search notes or scents..." aria-label="Search fragrances">
+          </div>
+
+          <div class="sort-select-wrapper">
+            <select id="catalog-sort" aria-label="Sort fragrances">
+              <option value="newest">Featured & Newest</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+              <option value="name-asc">Alphabetical (A-Z)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Products Grid (Dynamically rendered from Supabase) -->
+      <div id="products-grid" class="products-grid" aria-live="polite">
+        <!-- Skeleton Loaders rendered by default while querying Supabase -->
+        <div class="skeleton-card">
+          <div class="skeleton-box" style="height: 220px; margin-bottom: 1.5rem;"></div>
+          <div class="skeleton-box" style="height: 18px; width: 60%; margin-bottom: 0.8rem;"></div>
+          <div class="skeleton-box" style="height: 14px; width: 40%; margin-bottom: 1.5rem;"></div>
+          <div class="skeleton-box" style="height: 36px;"></div>
+        </div>
+        <div class="skeleton-card">
+          <div class="skeleton-box" style="height: 220px; margin-bottom: 1.5rem;"></div>
+          <div class="skeleton-box" style="height: 18px; width: 60%; margin-bottom: 0.8rem;"></div>
+          <div class="skeleton-box" style="height: 14px; width: 40%; margin-bottom: 1.5rem;"></div>
+          <div class="skeleton-box" style="height: 36px;"></div>
+        </div>
+        <div class="skeleton-card">
+          <div class="skeleton-box" style="height: 220px; margin-bottom: 1.5rem;"></div>
+          <div class="skeleton-box" style="height: 18px; width: 60%; margin-bottom: 0.8rem;"></div>
+          <div class="skeleton-box" style="height: 14px; width: 40%; margin-bottom: 1.5rem;"></div>
+          <div class="skeleton-box" style="height: 36px;"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Atelier Story / The Art of Scent -->
+  <section id="story" class="story-section">
+    <div class="container story-grid">
+      <div class="story-content">
+        <span class="story-tag">The Orhan Heritage</span>
+        <h2>Perfume as an <em>Invisible Architecture</em></h2>
+        <p>
+          Founded on the principle of unhurried artisanship, Orhan creates fragrances that don't merely scent the skin—they summon atmosphere, memory, and presence.
+        </p>
+        <p>
+          Every formulation begins with exceptional raw ingredients collected from family-owned distilleries worldwide. We reject mass synthesizers in favor of concentrated botanical complexity, allowing each fragrance to interact organically with individual body chemistry.
+        </p>
+        <div class="story-signature">
+          <div>
+            <div class="signature-name">Orhan &amp; Cie</div>
+            <div class="signature-role">Master Parfumeur &amp; Founder</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-visual">
+        <div class="story-visual-frame">
+          <img src="assets/icons/flacon.svg" alt="Orhan signature flacon" style="max-height: 380px; margin: 0 auto; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIP Atelier Club / Newsletter -->
+  <section id="newsletter" class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-box">
+        <h3>Join the Orhan Private Circle</h3>
+        <p>Receive private invitations to limited maceration vintages, bespoke olfactive consultations, and complimentary discovery sets.</p>
+        <form id="newsletter-form" class="newsletter-form">
+          <input type="email" id="newsletter-email" placeholder="Enter your email address" required aria-label="Email address for newsletter">
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Minimalist Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <span class="logo-main">ORHAN</span>
+            <span class="logo-sub">Haute Parfumerie</span>
+          </a>
+          <p>
+            An ode to classic haute parfumerie. Minimalist formulations created with uncompromising nobility and timeless elegance.
+          </p>
+          <div class="supabase-status-badge">
+            <span class="status-dot" id="footer-status-dot"></span>
+            <span id="footer-status-text">Connected to Supabase</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="#catalog">Fragrance Catalog</a></li>
+            <li><a href="#philosophy">Our Craftsmanship</a></li>
+            <li><a href="#story">Atelier Heritage</a></li>
+            <li><a href="admin.html">Admin Product Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <ul class="footer-links">
+            <li><a href="#catalog" onclick="OrhanApp.filterCategory('Extrait de Parfum')">Extrait de Parfum</a></li>
+            <li><a href="#catalog" onclick="OrhanApp.filterCategory('Eau de Parfum')">Eau de Parfum</a></li>
+            <li><a href="#catalog" onclick="OrhanApp.filterCategory('Oud & Oriental')">Oud &amp; Oriental</a></li>
+            <li><a href="#catalog" onclick="OrhanApp.filterCategory('Floral & Citrus')">Floral &amp; Citrus</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Atelier Service</h4>
+          <ul class="footer-links">
+            <li><a href="#">Complimentary Discovery Set</a></li>
+            <li><a href="#">Bespoke Scent Consultation</a></li>
+            <li><a href="#">Shipping &amp; Global Customs</a></li>
+            <li><a href="admin.html">Manage Products &amp; Prices</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ORHAN Haute Parfumerie. All rights reserved.</p>
+        <p>Powered by Supabase Backend</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==============================================================================
+       NATIVE MODALS & DIALOGS (<dialog>)
+       ============================================================================== -->
+
+  <!-- 1. Quick View Dialog -->
+  <dialog id="quickview-dialog" class="quickview-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-content">
+      <div class="dialog-media">
+        <img id="qv-img" src="assets/icons/flacon.svg" alt="Fragrance preview">
+      </div>
+      <div class="dialog-body">
+        <button id="qv-close-btn" class="dialog-close-btn" aria-label="Close details">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+
+        <header class="dialog-header">
+          <span id="qv-category" class="dialog-category">Eau de Parfum</span>
+          <h3 id="qv-title">Fragrance Title</h3>
+          <p id="qv-subtitle" class="dialog-subtitle">100ml / 3.4 FL. OZ.</p>
+        </header>
+
+        <div id="qv-price" class="dialog-price">$0.00</div>
+
+        <p id="qv-desc" class="dialog-desc">
+          Artisanal scent description.
+        </p>
+
+        <!-- Olfactory Pyramid -->
+        <div class="olfactory-pyramid">
+          <h5>Olfactory Notes Architecture</h5>
+          <div class="notes-row">
+            <div class="note-item"><strong>Top:</strong> <span id="qv-top-notes">—</span></div>
+            <div class="note-item"><strong>Heart:</strong> <span id="qv-heart-notes">—</span></div>
+            <div class="note-item"><strong>Base:</strong> <span id="qv-base-notes">—</span></div>
+          </div>
+        </div>
+
+        <div class="dialog-actions">
+          <div class="qty-control">
+            <button type="button" class="qty-btn" id="qv-qty-minus">-</button>
+            <input type="text" class="qty-input" id="qv-qty-input" value="1" readonly>
+            <button type="button" class="qty-btn" id="qv-qty-plus">+</button>
+          </div>
+          <button id="qv-add-cart-btn" class="btn-primary" style="flex-grow: 1;">
+            <span>Add to Bag</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- 2. Shopping Bag Slide-Over Drawer (<dialog>) -->
+  <dialog id="cart-drawer" class="cart-drawer" aria-labelledby="cart-title">
+    <div class="cart-header">
+      <h3 id="cart-title">Your Bespoke Bag (<span id="cart-drawer-count">0</span>)</h3>
+      <button id="cart-close-btn" class="dialog-close-btn" aria-label="Close bag">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div id="cart-items" class="cart-items">
+      <!-- Items dynamically populated -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-summary-row">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">$0.00</span>
+      </div>
+      <div class="cart-summary-row">
+        <span>Bespoke Packaging &amp; Shipping</span>
+        <span class="text-gold">Complimentary</span>
+      </div>
+      <div class="cart-summary-row total">
+        <span>Total</span>
+        <span id="cart-total">$0.00</span>
+      </div>
+      <button id="cart-checkout-btn" class="btn-primary" style="width: 100%;">
+        <span>Proceed to Bespoke Checkout</span>
+      </button>
+    </div>
+  </dialog>
+
+  <!-- 3. Checkout Confirmation Dialog -->
+  <dialog id="checkout-dialog" style="max-width: 500px; padding: 2rem;" aria-labelledby="checkout-title">
+    <div style="position: relative;">
+      <button id="checkout-close-btn" class="dialog-close-btn" style="top: 0; right: 0;" aria-label="Close checkout">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+
+      <h3 id="checkout-title" style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--indigo-950); margin-bottom: 0.5rem;">
+        Complete Your Order
+      </h3>
+      <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+        Your order will be packaged in handmade Orhan wooden presentation boxes and dispatched via priority courier.
+      </p>
+
+      <form id="checkout-form">
+        <div style="margin-bottom: 1rem;">
+          <label style="display:block; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.3rem;">Full Name</label>
+          <input type="text" id="checkout-name" required placeholder="e.g. Eleanor Vance" style="width: 100%; padding: 0.7rem; border: 1px solid var(--border-light); border-radius: 4px; font-size: 0.88rem;">
+        </div>
+
+        <div style="margin-bottom: 1rem;">
+          <label style="display:block; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.3rem;">Email Address</label>
+          <input type="email" id="checkout-email" required placeholder="eleanor@example.com" style="width: 100%; padding: 0.7rem; border: 1px solid var(--border-light); border-radius: 4px; font-size: 0.88rem;">
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display:block; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.3rem;">Delivery Address</label>
+          <textarea id="checkout-address" required placeholder="Street address, City, Postal code, Country" rows="3" style="width: 100%; padding: 0.7rem; border: 1px solid var(--border-light); border-radius: 4px; font-size: 0.88rem; resize: vertical;"></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%;">
+          <span>Confirm &amp; Place Order</span>
+        </button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Supabase Official JavaScript SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Client API Wrapper -->
+  <script src="js/supabase-client.js"></script>
+  <!-- Main Store Controller -->
+  <script src="js/app.js"></script>
+</body>
+</html>

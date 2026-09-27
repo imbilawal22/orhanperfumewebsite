@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orhan Parfums · Fragrance Catalog Manager (Supabase)</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- Admin Header -->
+  <header class="admin-header">
+    <div class="admin-header-inner">
+      <div class="admin-brand">
+        <h1>ORHAN</h1>
+        <span class="admin-badge">Atelier Manager</span>
+      </div>
+
+      <div class="admin-nav">
+        <div class="admin-status">
+          <span class="status-indicator" id="db-status-dot"></span>
+          <span id="db-status-text">Checking Supabase...</span>
+        </div>
+
+        <a href="index.html" class="btn-store-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          <span>View Live Storefront</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="admin-container">
+
+    <!-- Schema Alert Banner (Visible if table not yet created) -->
+    <div id="schema-notice" class="admin-banner" style="display: none;">
+      <div>
+        <p><strong>Database Setup Required:</strong> The <code>products</code> table was not detected in your Supabase project yet.</p>
+        <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.2rem;">
+          To create your tables and RLS policies, open your <a href="https://supabase.com/dashboard/project/qwltmvyoogwefrnmoulf/sql" target="_blank" style="text-decoration: underline; color: var(--indigo-700); font-weight: 600;">Supabase SQL Editor</a>, paste the contents of <code>supabase-schema.sql</code>, and click <strong>Run</strong>.
+        </p>
+      </div>
+      <button onclick="AdminApp.checkHealth()" style="background: var(--indigo-800); color: #fff; padding: 0.45rem 0.9rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Re-check Connection</button>
+    </div>
+
+    <div class="admin-layout">
+
+      <!-- Column 1: Add / Edit Fragrance Form -->
+      <section class="admin-card" id="form-card">
+        <div class="card-header-title">
+          <h2 id="form-title">Add New Fragrance</h2>
+          <span id="form-mode-badge" style="font-size: 0.72rem; color: var(--indigo-600); font-weight: 600; text-transform: uppercase;">New Item</span>
+        </div>
+
+        <form id="product-form">
+          <input type="hidden" id="edit-id" value="">
+
+          <div class="form-group">
+            <label class="form-label" for="prod-name">Fragrance Name *</label>
+            <input type="text" id="prod-name" class="form-input" placeholder="e.g. Santal Mystique" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="prod-category">Category *</label>
+              <select id="prod-category" class="form-select" required>
+                <option value="Eau de Parfum">Eau de Parfum</option>
+                <option value="Extrait de Parfum">Extrait de Parfum</option>
+                <option value="Oud & Oriental">Oud & Oriental</option>
+                <option value="Floral & Citrus">Floral & Citrus</option>
+                <option value="Woody & Amber">Woody & Amber</option>
+                <option value="Fresh & Aquatic">Fresh & Aquatic</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="prod-subtitle">Concentration / Subtitle</label>
+              <input type="text" id="prod-subtitle" class="form-input" placeholder="e.g. Extrait de Parfum" value="Eau de Parfum">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="prod-price">Price ($ USD) *</label>
+              <input type="number" id="prod-price" class="form-input" placeholder="185.00" step="0.01" min="0" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="prod-volume">Volume / Flacon Size</label>
+              <input type="text" id="prod-volume" class="form-input" placeholder="100ml / 3.4 FL. OZ." value="100ml / 3.4 FL. OZ.">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="prod-stock">Stock Quantity</label>
+              <input type="number" id="prod-stock" class="form-input" placeholder="25" value="25" min="0">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="prod-rating">Customer Rating</label>
+              <input type="number" id="prod-rating" class="form-input" placeholder="4.9" step="0.1" min="1" max="5" value="4.9">
+            </div>
+          </div>
+
+          <!-- Olfactory Notes Architecture -->
+          <div class="form-group">
+            <label class="form-label" for="prod-top-notes">Top Notes <span>(Light initial scent)</span></label>
+            <input type="text" id="prod-top-notes" class="form-input" placeholder="e.g. Italian Bergamot, Pink Pepper, Elemi">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="prod-heart-notes">Heart Notes <span>(The core identity)</span></label>
+            <input type="text" id="prod-heart-notes" class="form-input" placeholder="e.g. Turkish Rose, Cardamom, Iris">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="prod-base-notes">Base Notes <span>(The enduring sillage)</span></label>
+            <input type="text" id="prod-base-notes" class="form-input" placeholder="e.g. Agarwood, Sandalwood, White Amber">
+          </div>
+
+          <!-- Description -->
+          <div class="form-group">
+            <label class="form-label" for="prod-desc">Fragrance Description / Scent Story</label>
+            <textarea id="prod-desc" class="form-textarea" placeholder="Crafted with precious botanicals to tell an olfactory story..."></textarea>
+          </div>
+
+          <!-- Image URL & Live Preview -->
+          <div class="form-group">
+            <label class="form-label" for="prod-image">Image URL <span>(Leave empty to use luxury vector flacon)</span></label>
+            <input type="url" id="prod-image" class="form-input" placeholder="https://example.com/perfume.jpg">
+
+            <div class="image-preview-container">
+              <div class="image-preview-box" id="image-preview-box">
+                <img id="preview-img" src="assets/icons/flacon.svg" alt="Preview flacon">
+              </div>
+              <div class="image-preview-placeholder" id="preview-caption">Using default vector flacon flacon.svg</div>
+            </div>
+          </div>
+
+          <!-- Featured toggle -->
+          <div class="form-checkbox">
+            <input type="checkbox" id="prod-featured">
+            <label for="prod-featured" style="font-size: 0.85rem; font-weight: 500; cursor: pointer;">
+              Mark as <strong>Featured Fragrance</strong> (Highlighted on storefront)
+            </label>
+          </div>
+
+          <!-- Action buttons -->
+          <div class="form-buttons">
+            <button type="submit" id="btn-save-prod" class="btn-admin-submit">
+              <span>Save to Supabase</span>
+            </button>
+            <button type="button" id="btn-cancel-edit" class="btn-admin-cancel" onclick="AdminApp.resetForm()">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Column 2: Live Products in Supabase -->
+      <section class="admin-card">
+        <div class="card-header-title">
+          <div>
+            <h2>Current Fragrances (<span id="total-count">0</span>)</h2>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.2rem;">
+              Live data from your Supabase <code>products</code> table.
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button onclick="AdminApp.seedSampleData()" style="font-size: 0.75rem; background: var(--indigo-50); color: var(--indigo-700); border: 1px solid var(--indigo-100); padding: 0.4rem 0.75rem; border-radius: 4px; font-weight: 600; cursor: pointer;" title="Adds 3 luxury sample fragrances to test">
+              + Seed Sample Fragrances
+            </button>
+            <button onclick="AdminApp.loadCatalog()" style="font-size: 0.75rem; background: #fff; border: 1px solid var(--border-color); padding: 0.4rem 0.75rem; border-radius: 4px; cursor: pointer;" title="Refresh list">
+              ↻ Refresh
+            </button>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Fragrance</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="catalog-table-body">
+              <tr>
+                <td colspan="5" class="empty-table-state">
+                  <p>Loading fragrances from Supabase...</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Supabase Official JavaScript SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Client API Wrapper -->
+  <script src="js/supabase-client.js"></script>
+  <!-- Admin Controller -->
+  <script src="js/admin.js"></script>
+</body>
+</html>

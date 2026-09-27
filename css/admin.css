@@ -1,0 +1,439 @@
+/* ==============================================================================
+   ORHAN HAUTE PARFUMERIE - ADMIN PORTAL STYLESHEET
+   Indigo & Minimalist Dashboard Design
+   ============================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --admin-bg: #f8f9fc;
+  --admin-card-bg: #ffffff;
+  --indigo-950: #0a0a16;
+  --indigo-900: #121324;
+  --indigo-800: #1e1b4b;
+  --indigo-700: #2e2a72;
+  --indigo-600: #3730a3;
+  --indigo-500: #4338ca;
+  --indigo-100: #e0e7ff;
+  --indigo-50: #eef2ff;
+  --gold-400: #dfc79b;
+  --gold-500: #c5a880;
+  --text-dark: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border-color: #e2e8f0;
+  --danger-color: #ef4444;
+  --success-color: #10b981;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 20px -2px rgba(18, 19, 36, 0.08);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--admin-bg);
+  color: var(--text-dark);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* Header */
+.admin-header {
+  background: var(--indigo-950);
+  color: #fff;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.25);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.admin-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-brand h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  color: #fff;
+}
+
+.admin-badge {
+  background: var(--indigo-800);
+  color: var(--gold-400);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(197, 168, 128, 0.3);
+}
+
+.admin-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.admin-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--indigo-100);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--success-color);
+  box-shadow: 0 0 6px var(--success-color);
+}
+
+.btn-store-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gold-400);
+  border: 1px solid var(--gold-500);
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-store-link:hover {
+  background: rgba(197, 168, 128, 0.15);
+  color: #fff;
+}
+
+/* Main Container */
+.admin-container {
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+/* Alert Notification Banner */
+.admin-banner {
+  background: var(--indigo-50);
+  border: 1px solid var(--indigo-100);
+  border-left: 4px solid var(--indigo-600);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.admin-banner p {
+  font-size: 0.88rem;
+  color: var(--indigo-900);
+}
+
+.admin-banner strong {
+  color: var(--indigo-700);
+}
+
+/* Grid Layout */
+.admin-layout {
+  display: grid;
+  grid-template-columns: 480px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Card */
+.admin-card {
+  background: var(--admin-card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.card-header-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.card-header-title h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.25rem;
+  color: var(--indigo-950);
+}
+
+/* Form Styling */
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.4rem;
+}
+
+.form-label span {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  font-size: 0.88rem;
+  color: var(--text-dark);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--indigo-500);
+  box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.1);
+  outline: none;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.form-checkbox input {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: var(--indigo-600);
+}
+
+/* Live Image Preview */
+.image-preview-container {
+  margin-top: 0.5rem;
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  text-align: center;
+  background: var(--admin-bg);
+}
+
+.image-preview-box {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image-preview-box img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.image-preview-placeholder {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Form Buttons */
+.form-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.btn-admin-submit {
+  flex-grow: 1;
+  background: var(--indigo-800);
+  color: #fff;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-admin-submit:hover {
+  background: var(--indigo-600);
+}
+
+.btn-admin-cancel {
+  background: #f1f5f9;
+  color: var(--text-secondary);
+  padding: 0.85rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+.btn-admin-cancel:hover {
+  background: #e2e8f0;
+}
+
+/* Catalog Table View */
+.table-responsive {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-table th {
+  background: var(--admin-bg);
+  padding: 0.85rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.admin-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.85rem;
+  vertical-align: middle;
+}
+
+.admin-table tr:hover {
+  background-color: #fafbfe;
+}
+
+.product-row-title {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.table-thumb {
+  width: 44px;
+  height: 48px;
+  background: var(--indigo-50);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.table-thumb img {
+  max-height: 40px;
+  object-fit: contain;
+}
+
+.table-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-table-edit {
+  padding: 0.35rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--indigo-50);
+  color: var(--indigo-700);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--indigo-100);
+  cursor: pointer;
+}
+
+.btn-table-edit:hover {
+  background: var(--indigo-600);
+  color: #fff;
+}
+
+.btn-table-del {
+  padding: 0.35rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #fee2e2;
+  color: var(--danger-color);
+  border-radius: var(--radius-sm);
+  border: 1px solid #fecaca;
+  cursor: pointer;
+}
+
+.btn-table-del:hover {
+  background: var(--danger-color);
+  color: #fff;
+}
+
+.empty-table-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-secondary);
+}
+
+.empty-table-state svg {
+  margin: 0 auto 1rem;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .admin-layout {
+    grid-template-columns: 1fr;
+  }
+}

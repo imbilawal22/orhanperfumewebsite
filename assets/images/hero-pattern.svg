@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" width="100%" height="100%" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0d1a" />
+      <stop offset="35%" stop-color="#161836" />
+      <stop offset="70%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#0b0c16" />
+    </linearGradient>
+    <linearGradient id="indigoGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4338ca" stop-opacity="0.3" />
+      <stop offset="50%" stop-color="#6366f1" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#312e81" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="goldGlow" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#c5a880" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#dfc79b" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="centerLight" cx="65%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.25" />
+      <stop offset="50%" stop-color="#312e81" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#0c0d1a" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1440" height="800" fill="url(#bgGrad)" />
+
+  <!-- Ambient Light Orbs -->
+  <circle cx="950" cy="350" r="380" fill="url(#centerLight)" />
+  <circle cx="200" cy="650" r="280" fill="url(#goldGlow)" />
+
+  <!-- Subtle Minimalist Contour Waves -->
+  <path d="M -100 400 C 300 200, 700 600, 1100 350 C 1300 220, 1500 380, 1600 420 L 1600 850 L -100 850 Z" 
+        fill="url(#indigoGlow)" />
+  
+  <path d="M -100 550 C 350 420, 800 680, 1200 480 C 1380 390, 1500 510, 1600 530 L 1600 850 L -100 850 Z" 
+        fill="#121324" opacity="0.6" />
+
+  <!-- Fine Geometric Line Accents -->
+  <circle cx="950" cy="350" r="260" fill="none" stroke="#6366f1" stroke-width="0.7" opacity="0.15" stroke-dasharray="4,8" />
+  <circle cx="950" cy="350" r="320" fill="none" stroke="#c5a880" stroke-width="0.5" opacity="0.12" />
+  <circle cx="950" cy="350" r="390" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.08" stroke-dasharray="2,12" />
+
+  <!-- Delicate Stars/Points -->
+  <circle cx="340" cy="180" r="1.5" fill="#c5a880" opacity="0.6" />
+  <circle cx="580" cy="120" r="1.2" fill="#ffffff" opacity="0.4" />
+  <circle cx="820" cy="220" r="1.8" fill="#c5a880" opacity="0.7" />
+  <circle cx="1120" cy="160" r="1.5" fill="#ffffff" opacity="0.5" />
+  <circle cx="1280" cy="290" r="1.2" fill="#818cf8" opacity="0.6" />
+  <circle cx="700" cy="480" r="1.4" fill="#c5a880" opacity="0.4" />
+</svg>
